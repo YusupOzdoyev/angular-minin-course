@@ -4,14 +4,18 @@
   <p>Price: <span class="font-bold">{{ product.price | currency:'RUB' }}</span></p>
   
   <button
-    class="border py-2 rounded bg-yellow-400"
-    (click)="details = true"
+    class="border py-2 rounded"
+    [ngClass]="{
+      'bg-yellow-400' : !details,
+      'bg-blue-400' : details
+    }"
+    (click)="details = !details"
   >
-   Show Details
+   {{ details ? 'Hide' : 'Show' }} Details
   </button>
   
   <div *ngIf="details">
     <p>{{ product.description }}</p>
-    <p>Rate: {{ product.rating.rate }} </p>
+    <p>Rate: <span [ngStyle]="{fontWeight: 'bold'}">{{ product.rating.rate | number: '1.2-4'}}</span></p>
   </div>
 </div>
