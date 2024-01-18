@@ -1,4 +1,6 @@
 # AngularMininCourse
+---
+## Тут я изучил основы Angular. Прошел курс В.Минина.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
 
